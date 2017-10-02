@@ -7,3 +7,19 @@
 //
 
 import Foundation
+import UIKit
+
+protocol FriendDelegate: class {
+    func selectedFriendAndMood(_ selected: Friend)
+}
+
+struct Friend {
+    let name: String
+    let mood: String
+}
+
+extension Friend: Equatable {
+    static func ==(lhs: Friend, rhs: Friend) -> Bool {
+        return lhs.mood == rhs.mood
+    }
+}
