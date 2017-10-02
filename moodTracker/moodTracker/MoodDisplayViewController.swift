@@ -52,7 +52,23 @@ class MoodDisplayViewController: UIViewController, FriendDelegate {
     
     func selectedFriendAndMood(_ selected: Friend) {
         selectedFriend = selected
+        chooseAndDisplayFriend()
     }
+    
+    func chooseAndDisplayFriend() {
+        guard let selectedFriend = selectedFriend else {return}
+        if selectedFriend.name == friendName.text {
+            return
+        } else {
+            friendName.text = selectedFriend.name
+            friendMood.text = selectedFriend.mood
+        }
+    }
+    
+    @IBAction func chooseFriend(_ sender: Any) {
+        goToChoosePersonViewController()
+    }
+    
     
 }
 
