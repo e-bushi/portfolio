@@ -14,8 +14,9 @@ protocol FriendDelegate: class {
 }
 
 struct Friend {
-    let name: String
-    let mood: String
+    var name: String = ""
+    var mood: String = ""
+    var modTime = Date()
 }
 
 extension Friend: Equatable {

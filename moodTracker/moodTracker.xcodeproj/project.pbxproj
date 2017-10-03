@@ -7,16 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F602FC8A1F832F3200769BF1 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F602FC891F832F3200769BF1 /* FriendTableViewCell.swift */; };
+		F64547491F830BC100D2A642 /* ChooseMoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64547481F830BC100D2A642 /* ChooseMoodViewController.swift */; };
 		F6EC4F7C1F8051B50030E329 /* Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EC4F7B1F8051B50030E329 /* Friends.swift */; };
 		F6FA55E11F8045E3007EED92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FA55E01F8045E3007EED92 /* AppDelegate.swift */; };
 		F6FA55E61F8045E3007EED92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6FA55E41F8045E3007EED92 /* Main.storyboard */; };
 		F6FA55E81F8045E3007EED92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6FA55E71F8045E3007EED92 /* Assets.xcassets */; };
 		F6FA55EB1F8045E3007EED92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6FA55E91F8045E3007EED92 /* LaunchScreen.storyboard */; };
-		F6FA55F31F8047F6007EED92 /* MoodDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FA55F21F8047F6007EED92 /* MoodDisplayViewController.swift */; };
 		F6FA55F51F8048D2007EED92 /* ChoosePersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FA55F41F8048D2007EED92 /* ChoosePersonViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F602FC891F832F3200769BF1 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
+		F64547481F830BC100D2A642 /* ChooseMoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMoodViewController.swift; sourceTree = "<group>"; };
 		F6EC4F7B1F8051B50030E329 /* Friends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friends.swift; sourceTree = "<group>"; };
 		F6FA55DD1F8045E3007EED92 /* moodTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moodTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6FA55E01F8045E3007EED92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -24,7 +27,6 @@
 		F6FA55E71F8045E3007EED92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F6FA55EA1F8045E3007EED92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F6FA55EC1F8045E3007EED92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F6FA55F21F8047F6007EED92 /* MoodDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodDisplayViewController.swift; sourceTree = "<group>"; };
 		F6FA55F41F8048D2007EED92 /* ChoosePersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePersonViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,13 +61,14 @@
 			isa = PBXGroup;
 			children = (
 				F6FA55E01F8045E3007EED92 /* AppDelegate.swift */,
-				F6FA55F21F8047F6007EED92 /* MoodDisplayViewController.swift */,
 				F6FA55F41F8048D2007EED92 /* ChoosePersonViewController.swift */,
+				F64547481F830BC100D2A642 /* ChooseMoodViewController.swift */,
 				F6EC4F7B1F8051B50030E329 /* Friends.swift */,
 				F6FA55E41F8045E3007EED92 /* Main.storyboard */,
 				F6FA55E71F8045E3007EED92 /* Assets.xcassets */,
 				F6FA55E91F8045E3007EED92 /* LaunchScreen.storyboard */,
 				F6FA55EC1F8045E3007EED92 /* Info.plist */,
+				F602FC891F832F3200769BF1 /* FriendTableViewCell.swift */,
 			);
 			path = moodTracker;
 			sourceTree = "<group>";
@@ -142,8 +145,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F602FC8A1F832F3200769BF1 /* FriendTableViewCell.swift in Sources */,
 				F6FA55F51F8048D2007EED92 /* ChoosePersonViewController.swift in Sources */,
-				F6FA55F31F8047F6007EED92 /* MoodDisplayViewController.swift in Sources */,
+				F64547491F830BC100D2A642 /* ChooseMoodViewController.swift in Sources */,
 				F6FA55E11F8045E3007EED92 /* AppDelegate.swift in Sources */,
 				F6EC4F7C1F8051B50030E329 /* Friends.swift in Sources */,
 			);

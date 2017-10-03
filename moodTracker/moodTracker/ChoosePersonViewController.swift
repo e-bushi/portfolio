@@ -11,18 +11,29 @@ import UIKit
 
 
 
-class ChoosePersonViewController: UITableViewController {
+class ChoosePersonViewController: UITableViewController, FriendDelegate {
+    func selectedFriendAndMood(_ selected: Friend) {
+        friends.append(selected)
+    }
     
-    var friends: [Friend] = []
-    weak var delegate: FriendDelegate?
-    var modifiedFriend: Friend?
+    
+    var friends: [Friend] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "addMood" {
+            let chooseMoodViewController = segue.destination as! ChooseMoodViewController
+            
+            chooseMoodViewController.delegate = self
+            print("Add button tapped")
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -30,21 +41,20 @@ class ChoosePersonViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell", for: indexPath)
         
-        cell.textLabel?.text =  friends[indexPath.row].name
+        let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell", for: indexPath) as! FriendTableViewCell
+        
+        let row = indexPath.row
+        let element = friends[row]
+        
+        cell.nameLabel.text = element.name
+        cell.moodLable.text = element.mood
         
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let selectedfriend = friends[indexPath.row]
-        
-        
-        // TODO:  You will want to inform your delegate here that a pokemon was selected
-        delegate?.selectedFriendAndMood(selectedfriend)
-    }
 
-    
+    @IBAction func unwindToChoosePersonViewController(_ segue: UIStoryboardSegue) {
+        
+    }
 }
