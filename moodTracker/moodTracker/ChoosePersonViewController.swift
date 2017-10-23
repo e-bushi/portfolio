@@ -6,7 +6,7 @@
 //  Copyright © 2017 Chris Mauldin. All rights reserved.
 //
 
-import Foundation
+
 import UIKit
 
 
@@ -25,6 +25,9 @@ class ChoosePersonViewController: UITableViewController, FriendDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.rowHeight = 100
+        tableView.tableFooterView = UIView(frame: CGRect.zero)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -48,9 +51,22 @@ class ChoosePersonViewController: UITableViewController, FriendDelegate {
         let element = friends[row]
         
         cell.nameLabel.text = element.name
-        cell.moodLable.text = element.mood
+        cell.moodLabel.text = element.mood
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            friends.remove(at: indexPath.row)
+            
+            tableView.beginUpdates()
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
     }
     
 

@@ -11,5 +11,5 @@ import UIKit
 
 class FriendTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var moodLable: UILabel!
+    @IBOutlet weak var moodLabel: UILabel!
 }

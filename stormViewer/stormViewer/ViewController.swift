@@ -1,15 +1,14 @@
 //
 //  ViewController.swift
-//  one-imageViewer
+//  stormViewer
 //
-//  Created by Chris Mauldin on 9/18/17.
+//  Created by Chris Mauldin on 10/11/17.
 //  Copyright © 2017 Chris Mauldin. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UITableViewController {
-
+class pictureLabelTableViewController: UITableViewController {
     var pictures = [String]()
     
     override func viewDidLoad() {
@@ -17,15 +16,14 @@ class ViewController: UITableViewController {
         // Do any additional setup after loading the view, typically from a nib.
         let fm = FileManager.default
         let path = Bundle.main.resourcePath!
-        let items = try! fm.contentsOfDirectory(atPath: path)
         
+        let items = try! fm.contentsOfDirectory(atPath: path)
         for item in items {
             if item.hasPrefix("nssl") {
                 pictures.append(item)
-            } else {
-                pictures.append(item)
             }
         }
+        
         print(pictures)
     }
     
@@ -34,21 +32,20 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Picture", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "picture", for: indexPath)
         
         cell.textLabel?.text = pictures[indexPath.row]
+        
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let vc = storyboard?.instantiateViewController(withIdentifier: "Detail") as? DetailViewController {
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "detail") as? DetailViewController {
             vc.selectedImage = pictures[indexPath.row]
-            
             navigationController?.pushViewController(vc, animated: true)
         }
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

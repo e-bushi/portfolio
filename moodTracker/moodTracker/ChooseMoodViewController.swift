@@ -39,21 +39,25 @@ class ChooseMoodViewController: UIViewController {
             case 2:
                 mood = "😠"
                 
+            case 3:
+                mood = "😌"
+                
+            case 4:
+                mood = "🤢"
+                
             default:
                 break
             }
             
             friend.mood = mood
-            friend.modTime = Date()
+            //friend.modTime = Date()
             
             if friend.name != "" {
                 delegate?.selectedFriendAndMood(friend)
             }
             
-            print("Save this")
         } else {
             
-            print("cancel")
         }
     }
     
